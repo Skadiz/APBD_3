@@ -2,8 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
+using System.Linq;
 
 namespace Zadanie3.Controllers
 {
@@ -11,44 +10,62 @@ namespace Zadanie3.Controllers
     [ApiController]
     public class StudentController : ControllerBase
     {
+        List<Student> students = new List<Student>();
+
+        public StudentController()
+        {
+            var studentStrings = System.IO.File.ReadAllLines(@"Data/Data.csv");
+            foreach (var studentString in studentStrings)
+            {
+                var student = studentString.Split(',');
+                students.Add(new Student
+                {
+                    FirstName = student[0],
+                    LastName = student[1],
+                    IndexNumber = student[2],
+                    DateOFBirth = student[3],
+                    Studies = student[4],
+                    Form = student[5],
+                    Email = student[6],
+                    FatherName = student[7],
+                    MotherName = student[8]
+                }); ;
+            }
+        }
         [HttpGet("{indexNumber}")]
-        public async Task<IActionResult> GetStudents(String indexNumber)
+        public IActionResult GetStudent(string indexNumber)
         {
-           
-            return Ok(" ");
+            var res = students.Where(st => st.IndexNumber == indexNumber).FirstOrDefault();
+            return Ok(res.ToString());
         }
 
-        //HttpPatch 
         [HttpGet]
-        public async Task<IActionResult> GetStudentsAsync()
+        public IActionResult GetStudents(string orderBy)
         {
-            String dane = await System.IO.File.ReadAllTextAsync(@".\Data\Data.csv");
-
-            return Ok(dane);
-
+            string res = "";
+            students.ForEach(st => res += st.ToString());
+            return Ok(res);
         }
-        //HttpPost
+
         [HttpPost]
         public IActionResult CreateStudent(Student student)
         {
-            student.indexNumber = $"s{new Random().Next(1, 20000)}";
+            student.IndexNumber = $"s{new Random().Next(1, 20000)}";
+            students.Add(student);
             return Ok(student);
         }
-        //HttpPut
-        [HttpPut]
-        public IActionResult UpdateStudent(Student student)
+
+        [HttpPut("{indexNumber}")]
+        public IActionResult UpdateStudent(string indexNumber)
         {
-            return Ok("Aktualizacja dokonczona");
-        }
-        //HttpDelete
-        [HttpDelete]
-        public IActionResult DeleteStudent(Student student)
-        {
-            return Ok("Usuwanie dokonczone");
+            return Ok("Student was updated");
         }
 
-        //https://localhost:44339/api/students/?indexNumber=s1234
-
+        [HttpDelete("{indexNumber}")]
+        public IActionResult DeleteStudent(string indexNumber)
+        {
+            return Ok("Student was deleted");
+        }
 
     }
 }
