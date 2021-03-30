@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vo+ABLls0YzBkXu3TRKKdjeQXxKqD5mlqSkXQhdO0zeGt5AWF5Y5KFTSZeWLfyn7XvdDyjDD8qfW4sNMUA+HEw==",
+  "dgSpecHash": "AJF23QpN63dXW3Mehrflp0Ntbl7N2KRJodk8ku34Ns4S4ZLQoYeno1FuXvVHk2VxT5Am9AefcuBqlXwWNk712g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Всеволод\\source\\repos\\Zadanie3\\Zadanie3.csproj",
+  "projectFilePath": "D:\\APBD\\APBD_3\\Zadanie3\\Zadanie3.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Всеволод\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\Всеволод\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",

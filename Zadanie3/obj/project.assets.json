@@ -198,11 +198,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Всеволод\\source\\repos\\Zadanie3\\Zadanie3.csproj",
+      "projectUniqueName": "D:\\APBD\\APBD_3\\Zadanie3\\Zadanie3.csproj",
       "projectName": "Zadanie3",
-      "projectPath": "C:\\Users\\Всеволод\\source\\repos\\Zadanie3\\Zadanie3.csproj",
+      "projectPath": "D:\\APBD\\APBD_3\\Zadanie3\\Zadanie3.csproj",
       "packagesPath": "C:\\Users\\Всеволод\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Всеволод\\source\\repos\\Zadanie3\\obj\\",
+      "outputPath": "D:\\APBD\\APBD_3\\Zadanie3\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Всеволод\\AppData\\Roaming\\NuGet\\NuGet.Config",
