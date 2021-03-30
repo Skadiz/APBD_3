@@ -14,25 +14,7 @@ namespace Zadanie3.Controllers
         [HttpGet("{indexNumber}")]
         public async Task<IActionResult> GetStudents(String indexNumber)
         {
-            var pathCSV = @".\Data\Data.csv";
-            var hash = new HashSet<Student>(new StudentsCompare());
-            var log = new StringBuilder("");
-            var lines = System.IO.File.ReadAllLinesAsync(pathCSV);
-
-            foreach (var line in await lines)
-            {
-                var info = line.Split(",");
-
-                var student = new Student(line);
-                if (student.indexNumber == indexNumber)
-                {
-                    return Ok(line);
-                }
-                else
-                {
-                    return Ok(" ");
-                }
-            }
+           
             return Ok(" ");
         }
 
